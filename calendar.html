@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>Calendar</title>
+        <link rel="stylesheet" type="text/css" href="calendar.css">
+        <script src="jquery-3.2.1.js"></script>
+        <script src ="calendar.js"></script>
+        <script src ="DayCalendar.js"></script>
+        <script src ="WeekCalendar.js"></script>
+        <script src ="MonthCalendar.js"></script>
+        <script src ="YearCalendar.js"></script>
+    </head>
+
+    <body>
+
+        <div id="introduction">
+            <p>Welcome to the Calendar!</p>
+        </div>
+        
+        <div>
+            <table id="calendar" >
+                <!-- <th class = "day">Sunday</th>
+                <th class = "day">Monday</th>
+                <th class = "day">Tuesday</th>
+                <th class = "day">Wednesday</th>
+                <th class = "day">Thursday</th>
+                <th class = "day">Friday</th>
+                <th class = "day">Saturday</th> -->
+            </table>
+            <button onClick="calendar(yearly)" id="yearly">Yearly View</button>
+            <button onClick="calendar(monthly)" id="monthly">Monthly View</button>
+            <button onClick="calendar(weekly)" id="weekly">Weekly View</button>
+            <button onClick="calendar(daily)" id="daily">Daily View</button>
+        </div>
+
+        <div id="moreLinks">
+            <h4>More Links:</h4>
+        </div>
+
+        <div id="more">
+
+        </div>
+
+    </body>
+
+</html>
