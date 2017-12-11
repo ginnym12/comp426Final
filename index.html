@@ -11,47 +11,56 @@
     <h4 class="titleText">A scheduling tool for your busy family!</h4>
   </div>
   <br>
-  <div id="buttonDiv"><button id="newEventButton">Add New Event!</button></div>
-  <div id="myModal" class="modal">
-  <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form method="post" action="insert-data.php">
-      <input type="hidden" name="submitted" value="true"/>
-      <fieldset id="formContent">
-        <legend>ADD NEW EVENT</legend>
-        <label>Name of Family Member: <input type="text" name="famMember"/></label>
-        <label>Name of Event: <input type="text" name="famMember"/></label>
-        <label>Location: <input type="text" name="location"/></label>
-        <label>Time: <input type="time" name="time"/></label>
-        <label>Date: <input type="date" name="date"/></label>
-      </fieldset>
-      <br/>
-      <input type="submit" value="add new event"/>
-      </form>
+<div id='buttonDiv'>
+<button id="newEventButton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form id="formContent" class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label><b>First Name</b></label>
+      <input type="text" placeholder="First Name" name="fName" required>
+      <label><b>Last Name</b></label>
+      <input type="text" placeholder="Last Name" name="lName" required>
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Username" name="username" required>
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
     </div>
-  </div>
-  <script>
-  // Get the modal
-  var modal = document.getElementById('myModal');
-  // Get the button that opens the modal
-  var btn = document.getElementById("newEventButton");
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  // When the user clicks the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "block";
-  }
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
+  </form>
+</div>
+<button id="newEventButton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
+<div id="id02" class="modal">
+  <form id="formContent" class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <button type="submit">Login</button>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+var modal = document.getElementById('id02');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-  }
-  </script>
+}
+</script>
 </body>
 </html>
