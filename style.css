@@ -56,7 +56,6 @@ body {
   padding-top: 50px;
   display: flex;
   justify-content: center;
-  align-content: space-between;
 }
 #newEventButton {
   width: 20%;
@@ -65,7 +64,14 @@ body {
   font-size: 25px;
   border-radius: 15px;
   background-color: #aacfff;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
 }
+#newEventButton:hover { background-color:#6793db; }
+
 #instructions {
   font-family: Arial, Helvetica, sans-serif;
   width: 80%;
@@ -77,3 +83,24 @@ body {
   align-items: center;
   flex-direction: column;
 }
+#buttonDiv2 {
+  padding-top: 50px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#newEventButton2 {
+  min-width: 30%;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  border-radius: 15px;
+  background-color: #aacfff;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+#newEventButton2:hover { background-color:#6793db; }
