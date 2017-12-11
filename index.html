@@ -23,9 +23,9 @@
       <li> Once you have individually registered, click "Log In" and enter your username and password to access your family's calendar!</li>
     </ol>
   </div>
-<div id='buttonDiv'>
+<div id="buttonDiv2">
   <!-- register new family -->
-  <button id="newEventButton" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register New Family!</button>
+  <button id="newEventButton2" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register New Family!</button>
   <div id="id03" class="modal">
     <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
     <form id="formContent" class="modal-content animate" action="/action_page.php">
@@ -41,7 +41,7 @@
   </div>
 
 <!-- register new user button -->
-<button id="newEventButton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up!</button>
+<button id="newEventButton2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up!</button>
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
   <form id="formContent" class="modal-content animate" action="/action_page.php">
@@ -67,7 +67,7 @@
 </div>
 
 <!-- login button -->
-<button id="newEventButton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Log In!</button>
+<button id="newEventButton2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Log In!</button>
 <div id="id02" class="modal">
   <form id="formContent" class="modal-content animate" action="/action_page.php">
     <div class="container">
@@ -76,8 +76,6 @@
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
       <button type="submit">Login</button>
-    </div>
-    <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
