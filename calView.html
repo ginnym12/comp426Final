@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family Calendar</title>
+  <script src="modal.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="title">
+    <h1 class="titleText">Family Calendar</h1>
+    <h4 class="titleText">A scheduling tool for your busy family!</h4>
+  </div>
+  <br>
+  <div id="buttonDiv"><button id="newEventButton">Add New Event!</button></div>
+  <div id="myModal" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form method="post" action="insert-data.php">
+      <input type="hidden" name="submitted" value="true"/>
+      <fieldset id="formContent">
+        <legend>ADD NEW EVENT</legend>
+        <label>Name of Family Member: <input type="text" name="famMember"/></label>
+        <label>Name of Event: <input type="text" name="famMember"/></label>
+        <label>Location: <input type="text" name="location"/></label>
+        <label>Time: <input type="time" name="time"/></label>
+        <label>Date: <input type="date" name="date"/></label>
+      </fieldset>
+      <br/>
+      <input type="submit" value="add new event"/>
+      </form>
+    </div>
+  </div>
+  <script>
+  // Get the modal
+  var modal = document.getElementById('myModal');
+  // Get the button that opens the modal
+  var btn = document.getElementById("newEventButton");
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  // When the user clicks the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+  }
+  </script>
+</body>
+</html>
