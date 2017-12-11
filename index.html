@@ -6,13 +6,42 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <!-- jumbotron, should stay constant on each page -->
   <div id="title">
     <h1 class="titleText">Family Calendar</h1>
     <h4 class="titleText">A scheduling tool for your busy family!</h4>
   </div>
   <br>
+  <div id="instructions">
+    <h3>If you have an account, click "Log in" to log into your family's calendar. If you are a new user,
+      please follow these steps:</h3>
+    <ol>
+      <li> Click "Register New Family" and create your family's own family username.
+      Share this username with your family.</li>
+      <li> Once your family is registered, you and your family members should create individual accounts.
+        Click the "Sign Up!" button to individually register. Be sure to include your family's username in the appropriate field!</li>
+      <li> Once you have individually registered, click "Log In" and enter your username and password to access your family's calendar!</li>
+    </ol>
+  </div>
 <div id='buttonDiv'>
-<button id="newEventButton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+  <!-- register new family -->
+  <button id="newEventButton" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register New Family!</button>
+  <div id="id03" class="modal">
+    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
+    <form id="formContent" class="modal-content animate" action="/action_page.php">
+      <div class="container">
+        <label><b>Family Username</b></label>
+        <input type="text" placeholder="Family Username" name="famUsername" required>
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn">Register Family</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+<!-- register new user button -->
+<button id="newEventButton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up!</button>
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
   <form id="formContent" class="modal-content animate" action="/action_page.php">
@@ -27,7 +56,8 @@
       <input type="password" placeholder="Enter Password" name="psw" required>
       <label><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
+      <label><b>Family Username</b></label>
+      <input type="text" placeholder="Family Username" name="famUsername" required>
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         <button type="submit" class="signupbtn">Sign Up</button>
@@ -35,7 +65,9 @@
     </div>
   </form>
 </div>
-<button id="newEventButton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
+
+<!-- login button -->
+<button id="newEventButton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Log In!</button>
 <div id="id02" class="modal">
   <form id="formContent" class="modal-content animate" action="/action_page.php">
     <div class="container">
@@ -55,6 +87,7 @@
 // Get the modal
 var modal = document.getElementById('id01');
 var modal = document.getElementById('id02');
+var modal = document.getElementById('id03');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
