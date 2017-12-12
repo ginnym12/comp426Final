@@ -1,21 +1,38 @@
-var calendar = function (view) {
-    //view represents daily, weekly, monthly, yearly
-    var calendarType = null;
-    if (view == daily) {
-        console.log('daily');
-        calendarType = new DayCalendar();
-        //make a new function for each of day week month and year?
-    } else if (view == weekly) {
-        console.log('weekly');
-        calendarType = new WeekCalendar();
-    } else if (view == monthly) {
-        console.log('monthly');
-        calendarType = new MonthCalendar();
-    } else if (view == yearly) {
-        console.log('yearly');
-        calendarType = new YearCalendar();
+var currentView = null; //what viewtype (weekly, daily, monthly) the calendar is currently projecting
+var currentCalendar = null;
+var username = null;
+var ajaxCall = function (view) {
+    // console.log(view);
+    currentView = view;
+    var username = $("#selectedName").val();
+    if (username == "") {
+        return;
     }
+    alert("ajax call about to start with username: " + username);
+    $.ajax("/populateCalendar.php",
+           {type: "GET",
+            datatype: "JSON", 
+            name: username,
+            success: makeNewCalendar,
+            error: function(){alert("Error: ajax call unsuccessful");}
+            });
 };
+
+var makeNewCalendar = function (data, textStatus, jqXHR) {
+    var split = data.split("496VNE5PF6IZ");
+    var parsedArray = [];
+    for (var i = 0; i < split.length-1; i++) {
+        parsedArray.push(JSON.parse(split[i]));
+    }
+    if (currentView == "daily") {
+        currentCalendar = new DayCalendar(parsedArray);
+    } else if (currentView == "weekly") {
+        console.log('hit');
+        currentCalendar = new WeekCalendar(parsedArray);
+    } else if (currentView == "monthly") {
+        currentCalendar = new MonthCalendar(parsedArray);
+    }
+}
 
 var Day = {
     //constants for day defined in JS
@@ -31,7 +48,6 @@ var Day = {
 };
 
 var date = new Date();
-console.log(date.getDay());
 switch (new Date().getDay()) {
     case 0:
         Day.TODAY = Day.SUNDAY;
@@ -55,9 +71,8 @@ switch (new Date().getDay()) {
         Day.TODAY = Day.SATURDAY;
 }
 
-var WeekCalendar = function () {
-    //pull from database and insert it into array format?
-
+var WeekCalendar = function (schedule) {
+    console.log(schedule);
     // TO DO:
     // this will make 5 rows for dates, but need to account for cases where
     // only 4 rows are needed or you need to accont for 6 rows
@@ -70,16 +85,31 @@ var WeekCalendar = function () {
     $('<th id="4" class="day">Thursday</th>').appendTo("#calendar");
     $('<th id="5" class="day">Friday</th>').appendTo("#calendar");
     $('<th id="6" class="day">Saturday</th>').appendTo("#calendar");
-    for (var i = 0; i < 5; i++) {
+
+    var m=0;
+     //iterates through the rows
+    for (var i = 0; i < 6; i++) {
+        //iterates through the columns
         $('<tr id=rownumber' + i + ' class="row" />').appendTo("#calendar");
         for (var j = 0; j < 7; j++) {
-            $('<td class="box">').appendTo("#rownumber" + i);
+            var field = $('<td id=daynumber' + m + ' class="box">').appendTo("#rownumber" + i);
         }
     }
+
+    //adds information to the calendar
+    for (var i = 0; k < schedule.length; k++) {
+        //var date = $(field).text(schedule[k]["Date"]);
+        var day = date.split("-");
+        
+
+    }
+
     $('#' + Day.TODAY).css('border', '5px solid red');
+
+
 };
 
-var DayCalendar = function () {
+var DayCalendar = function (username) {
     $("#calendar").empty();
     for (var i = 0; i < 24; i++) {
         $('<tr id=rownumber' + i + ' class="row" />').appendTo("#calendar");
@@ -128,3 +158,9 @@ function filterFunction() {
         }
     }
 }
+
+
+var showSchedule = function (username) {
+
+
+};

@@ -7,35 +7,32 @@
     <link rel="stylesheet" type="text/css" href="calendar.css">
     <script src="jquery-3.2.1.js"></script>
     <script src="calendar.js"></script>
-    <!-- <script src ="DayCalendar.js"></script>
-        <script src ="WeekCalendar.js"></script>
-        <script src ="MonthCalendar.js"></script>
-        <script src ="YearCalendar.js"></script> -->
 </head>
 
 <body>
 
-    <h2>Search/Filter Dropdown</h2>
-    <p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
-
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button>
         <div id="myDropdown" class="dropdown-content">
             <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-            <a href="#about">About</a>
-            <a href="#base">Base</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-            <a href="#custom">Custom</a>
-            <a href="#support">Support</a>
-            <a href="#tools">Tools</a>
-        </div>
+            <!-- change these to names of family members -->
+        <!-- <a href="#about">Mark</a>
+            <a href="#base">Scott</a> -->
+    </div>
+    <form action="">
+        <!-- WILL NEED A JS SCRIPT HERE TO APPEND STUFF TO DOM DEPENDIGN ON WHOSE LOGGING IN -->
+        <select id="selectedName" name="customers">
+            <option value="markpetersen" selected="selected">Mark</option>
+            <option value="scottpetersen">Scott</option>
+        </select>
+    </form>
     </div>
 
-
-    <div id="introduction">
-        <p>Welcome to the Calendar!</p>
+    <div id="title">
+        <h1 class="titleText">Family Calendar</h1>
+        <h4 class="titleText">A scheduling tool for your busy family!</h4>
     </div>
+    <br>
 
     <div id="table">
         <table id="calendar">
@@ -47,19 +44,85 @@
                 <th class = "day">Friday</th>
                 <th class = "day">Saturday</th> -->
         </table>
-        <!-- <button onClick="calendar(yearly)" id="yearly">Yearly View</button> -->
-        <button onClick="calendar(monthly)" id="monthly">Monthly View</button>
-        <button onClick="calendar(weekly)" id="weekly">Weekly View</button>
-        <button onClick="calendar(daily)" id="daily">Daily View</button>
+        <button onClick="ajaxCall('monthly')" id="monthly">Monthly View</button>
+        <button onClick="ajaxCall('weekly')" id="weekly">Weekly View</button>
+        <button onClick="ajaxCall('daily')" id="daily">Daily View</button>
     </div>
 
-    <div id="moreLinks">
-        <h4>More Links:</h4>
+    <div id="buttonDiv">
+        <button id="newEventButton">Add New Event!</button>
     </div>
-
-    <div id="more">
-
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- from mamp applications folder on mark's computer -->
+            <form id="formoid" action="/submitForm.php" method="get">
+                <input type="hidden" name="submitted" value="true" />
+                <fieldset id="formContent">
+                    <legend>ADD NEW EVENT FOR: (username here)</legend>
+                    <label>Name of Event:
+                        <input id="event" type="text" name="event" />
+                    </label>
+                    <label>Location:
+                        <input id="location" type="text" name="location" />
+                    </label>
+                    <label>Time:
+                        <input id="time" type="time" name="time" />
+                    </label>
+                    <label>Date:
+                        <input id="date" type="date" name="date" />
+                    </label>
+                </fieldset>
+                <br/>
+                <input type="submit" value="Add event!" />
+            </form>
+        </div>
     </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        // Get the button that opens the modal
+        var btn = document.getElementById("newEventButton");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        $("#formoid").submit(function (event) {
+            /* stop form from submitting normally */
+            event.preventDefault();
+
+            /* get the action attribute from the <form action=""> element */
+            var $form = $(this),
+                url = $form.attr('action');
+
+            /* Send the data using post with element id name and name2*/
+            var posting = $.get(url, {
+                event: $('#event').val(),
+                location: $('#location').val(),
+                time: $('#time').val(),
+                date: $('#date').val()
+            });
+
+            /* Alerts the results */
+            posting.done(function (data) {
+                alert('success');
+            });
+        });
+    </script>
 
 </body>
 
