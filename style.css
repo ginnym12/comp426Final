@@ -1,119 +1,352 @@
 body {
-  background-color: #cee1ff;}
+    background-color: #cee1ff;
+}
+
 #title {
-  width: 80%;
-  background-color: #aacfff;
-  border: solid, white, 5px;
-  border-radius: 20px;
-  margin: auto;
-  height: 125px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    width: 80%;
+    background-color: #aacfff;
+    border: solid, white, 5px;
+    border-radius: 20px;
+    margin: auto;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
 .titleText {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+
 /* The Modal (background) */
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
+
+
 /* Modal Content/Box */
+
 .modal-content {
     background-color: #aacfff;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     border-radius: 20px;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
 }
+
+
 /* The Close Button */
+
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
+
 #formContent {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #buttonDiv {
-  padding-top: 50px;
-  display: flex;
-  justify-content: center;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
 }
-#newEventButton {
-  width: 20%;
-  height: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  border-radius: 15px;
-  background-color: #aacfff;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
+
+.theButton {
+    width: 20%;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: #aacfff;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
-#newEventButton:hover { background-color:#6793db; }
+
+.theButton:hover {
+    background-color: #6793db;
+}
 
 #instructions {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 80%;
-  background-color: #aacfff;
-  border: solid, white, 5px;
-  border-radius: 20px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    background-color: #aacfff;
+    border: solid, white, 5px;
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
 #buttonDiv2 {
-  padding-top: 50px;
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
+    padding-top: 50px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
+
 #newEventButton2 {
-  min-width: 30%;
-  height: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  border-radius: 15px;
-  background-color: #aacfff;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
+    min-width: 30%;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: #aacfff;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
-#newEventButton2:hover { background-color:#6793db; }
+
+#newEventButton2:hover {
+    background-color: #6793db;
+}
 
 #dropdown {
- display: flex;
- justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
 #selectedName {
-  min-width: 30%;
-  height: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  border-radius: 15px;
-  background-color: #aacfff;
+    min-width: 30%;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: #aacfff;
 }
+
+#calendar {
+    width: 1000px;
+    height: 300px;
+    border: 1px solid #aacfff;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #032760;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 2px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #032760;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td.box {
+    padding-left: 175px;
+    font-size: 30px;
+    color: #032760;
+}
+
+
+/* .daybox {
+} */
+
+.day {
+    padding: 5px;
+}
+
+table {
+    border-radius: 20px;
+}
+
+
+/* th {
+    display: table-header-group;
+} */
+
+td:hover {
+    background-color: rgba(0, 0, 255, 0.055);
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd
+}
+
+.show {
+    display: block;
+}
+
+body {
+    background-color: #cee1ff;
+}
+
+#title {
+    width: 80%;
+    background-color: #aacfff;
+    border: solid, white, 5px;
+    border-radius: 20px;
+    margin: auto;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleText {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #aacfff;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#formContent {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ #buttonDiv {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+/*
+#newEventButton {
+    width: 20%;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: #aacfff;
+} */

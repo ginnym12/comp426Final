@@ -1,99 +1,212 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Family Calendar</title>
-  <script src="modal.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Family Calendar</title>
+    <!-- <script src="modal.js"></script> -->
+    <script src="jquery-3.2.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
+
 <body>
-  <!-- jumbotron, should stay constant on each page -->
-  <div id="title">
-    <h1 class="titleText">Family Calendar</h1>
-    <h4 class="titleText">A scheduling tool for your busy family!</h4>
-  </div>
-  <br>
-  <div id="instructions">
-    <h3>If you have an account, click "Log in" to log into your family's calendar. If you are a new user,
-      please follow these steps:</h3>
-    <ol>
-      <li> Click "Register New Family" and create your family's own family username.
-      Share this username with your family.</li>
-      <li> Once your family is registered, you and your family members should create individual accounts.
-        Click the "Sign Up!" button to individually register. Be sure to include your family's username in the appropriate field!</li>
-      <li> Once you have individually registered, click "Log In" and enter your username and password to access your family's calendar!</li>
-    </ol>
-  </div>
-<div id="buttonDiv2">
-  <!-- register new family -->
-  <button id="newEventButton2" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register New Family!</button>
-  <div id="id03" class="modal">
-    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
-    <form id="formContent" class="modal-content animate" action="/action_page.php">
-      <div class="container">
-        <label><b>Family Username</b></label>
-        <input type="text" placeholder="Family Username" name="famUsername" required>
-        <div class="clearfix">
-          <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn">Register Family</button>
+    <!-- jumbotron, should stay constant on each page -->
+    <div id="title">
+        <h1 class="titleText">Family Calendar</h1>
+        <h4 class="titleText">A scheduling tool for your busy family!</h4>
+    </div>
+    <br>
+    <div id="instructions">
+        <h3>If you have an account, click "Log in" to log into your family's calendar. If you are a new user, please follow these
+            steps:
+        </h3>
+        <ol>
+            <li> Click "Register New Family" and create your family's own family username. Share this username with your family.</li>
+            <li> Once your family is registered, you and your family members should create individual accounts. Click the "Sign
+                Up!" button to individually register. Be sure to include your family's username in the appropriate field!</li>
+            <li> Once you have individually registered, click "Log In" and enter your username and password to access your family's
+                calendar!
+            </li>
+        </ol>
+    </div>
+    <div id="buttonDiv2">
+        <!-- register new family -->
+        <button id="newEventButton2" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register New Family!</button>
+        <div id="id03" class="modal">
+            <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
+            <form id="formContent3" class="modal-content animate" action="/registerFamily.php">
+                <div id="popup3" class="container">
+                    <label>
+                        <b>Family Username</b>
+                    </label>
+                    <input id="familyUsername" type="text" placeholder="Family Username" name="famUsername" required>
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="signupbtn">Register Family</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-    </form>
-  </div>
 
-<!-- register new user button -->
-<button id="newEventButton2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up!</button>
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form id="formContent" class="modal-content animate" action="/action_page.php">
-    <div class="container">
-      <label><b>First Name</b></label>
-      <input type="text" placeholder="First Name" name="fName" required>
-      <label><b>Last Name</b></label>
-      <input type="text" placeholder="Last Name" name="lName" required>
-      <label><b>Username</b></label>
-      <input type="text" placeholder="Username" name="username" required>
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-      <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      <label><b>Family Username</b></label>
-      <input type="text" placeholder="Family Username" name="famUsername" required>
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
-    </div>
-  </form>
-</div>
+        <!-- register new user button -->
+        <button id="newEventButton2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up!</button>
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+            <form id="formContent1" class="modal-content animate" action="/createLogin.php">
+                <div id="popup1" class="container">
+                    <label>
+                        <b>First Name</b>
+                    </label>
+                    <input id="first" type="text" placeholder="First Name" name="fName" required>
+                    <label>
+                        <b>Last Name</b>
+                    </label>
+                    <input id="last" type="text" placeholder="Last Name" name="lName" required>
+                    <label>
+                        <b>Username</b>
+                    </label>
+                    <input id="username2" type="text" placeholder="Username" name="username" required>
+                    <label>
+                        <b>Password</b>
+                    </label>
+                    <input id="password2" type="password" placeholder="Enter Password" name="psw" required>
+                    <label>
+                        <b>Repeat Password</b>
+                    </label>
+                    <input id="passwordrepeat" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                    <label>
+                        <b>Family Username</b>
+                    </label>
+                    <input id="famIDcode" type="text" placeholder="Family Username" name="famUsername" required>
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-<!-- login button -->
-<button id="newEventButton2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Log In!</button>
-<div id="id02" class="modal">
-  <form id="formContent" class="modal-content animate" action="/action_page.php">
-    <div class="container">
-      <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-      <button type="submit">Login</button>
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <p>Forgot password? Send us an email by clicking
-        <a data-email="mark@familycalendar.com" href="mailto:mark@familycalendar.com">here!</a></p>
+        <!-- login button -->
+        <button id="newEventButton2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Log In!</button>
+        <div id="id02" class="modal">
+            <form id="formContent2" class="modal-content animate" action="/redirectLogin.php">
+                <div id="popup2" class="container">
+                    <label>
+                        <b>Username</b>
+                    </label>
+                    <input id="username3" type="text" placeholder="Enter Username" name="uname" required>
+                    <label>
+                        <b>Password</b>
+                    </label>
+                    <input id="password3" type="password" placeholder="Enter Password" name="psw" required>
+                    <button type="submit">Login</button>
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                    <p>Forgot password? Send us an email by clicking
+                        <a data-email="mark@familycalendar.com" href="mailto:mark@familycalendar.com">here!</a>
+                    </p>
+                </div>
+            </form>
+        </div>
     </div>
-  </form>
-</div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-var modal = document.getElementById('id02');
-var modal = document.getElementById('id03');
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        var modal = document.getElementById('id02');
+        var modal = document.getElementById('id03');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        $("#formContent3").submit(function (event) {
+            /* stop form from submitting normally */
+            event.preventDefault();
+
+            /* get the action attribute from the <form action=""> element */
+            var $form = $(this),
+                url = $form.attr('action');
+
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            for (var i = 0; i < 10; i++) {
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+            }
+
+            /* Send the data using post with element id name and name2*/
+            var posting = $.get(url, {
+                famID: text,
+                famUsername: $('#familyUsername').val()
+            });
+
+            /* Alerts the results */
+            posting.done(function (data) {
+                modal.style.display = "none";
+                alert("Family created! Be sure to write down your unique family ID "+
+                        "and share it with your family! You all will need it when creating "+
+                        "a new account. Code: " + text);
+            });
+        });
+
+        $("#formContent1").submit(function (event) {
+            /* stop form from submitting normally */
+            event.preventDefault();
+
+            /* get the action attribute from the <form action=""> element */
+            var $form = $(this),
+                url = $form.attr('action');
+
+            if ($('#password2').val() != $('#passwordrepeat').val()) {
+                //modal.style.display = "none";
+                alert("Passwords do not match. Try again");
+                return;
+            }
+
+            /* Send the data using post with element id name and name2*/
+            var posting = $.get(url, {
+                first: $('#first').val(),
+                last: $('#last').val(),
+                username: $('#username2').val(),
+                password: $('#password2').val(),
+                famID: $('#famIDcode').val()
+            });
+
+            /* Alerts the results */
+            posting.done(function (data) {
+                modal.style.display = "none";
+                if (data == "Login") {alert("Login is already taken.");}
+                else if (data == "FamID") {alert("FamID does not exist.");}
+                else if (data == "Success") {alert("Successfully registered an account!");}
+                else {alert("Error.");}
+            });
+        });
+
+        $("#formContent2").submit(function (event) {
+            /* stop form from submitting normally */
+            event.preventDefault();
+
+            /* get the action attribute from the <form action=""> element */
+            var $form = $(this),
+                url = $form.attr('action');
+
+            /* Send the data using post with element id name and name2*/
+            var posting = $.get(url, {
+                username: $('#username3').val(),
+                password: $('#password3').val()
+            });
+
+            /* Alerts the results */
+            posting.done(function (data) {
+                console.log(data);
+                modal.style.display = "none";
+                if (data == "Invalid") {alert("Invalid username/password.");}
+                else {
+                    $(location).attr('href', '/calendar.html?username=' + $('#username3').val());
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

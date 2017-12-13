@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // TO DO: ACCESS USERNAME FROM LOGIN (For now, assume everything is you)
-$username = "markpetersen";
+$username = $_GET["username"];
 $event = $_GET["event"];
 $location = $_GET["location"];
 $time = $_GET["time"];

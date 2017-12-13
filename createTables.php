@@ -93,8 +93,20 @@ for ($i=1; $i<20; $i++) {
         ("karenpetersen", "Cardio", "YMCA", "'.$i.':00", "2017-12-'.$j.'")';
     if ($conn->query($sql) !== TRUE) {echo "Error: " . $sql . "<br>" . $conn->error;}
     $sql = 'INSERT INTO `Activity` (`Username`, `Event`, `Location`, `Time`, `Date`) VALUES
+        ("markpetersen", "Soccer", "Gym", "'.$j.':00", "2017-11-'.$i.'")';
+    if ($conn->query($sql) !== TRUE) {echo "Error: " . $sql . "<br>" . $conn->error;}
+    $sql = 'INSERT INTO `Activity` (`Username`, `Event`, `Location`, `Time`, `Date`) VALUES
+        ("karenpetersen", "Cardio", "YMCA", "'.$i.':00", "2017-11-'.$j.'")';
+    if ($conn->query($sql) !== TRUE) {echo "Error: " . $sql . "<br>" . $conn->error;}
+    $sql = 'INSERT INTO `Activity` (`Username`, `Event`, `Location`, `Time`, `Date`) VALUES
         ("scottpetersen", "Golf", "Grand Isle", "'.$j.':00", "2017-12-'.$j.'")';
     if ($conn->query($sql) !== TRUE) {echo "Error: " . $sql . "<br>" . $conn->error;}
+}
+
+for ($i=1; $i<10; $i++) {
+    $j--;
+    $sql = 'INSERT INTO `Activity` (`Username`, `Event`, `Location`, `Time`, `Date`) VALUES
+        ("markpetersen", "Soccer", "Gym", "'.$j.':00", "2017-'.$i.'-'.$i.'")';
 }
 
 $j=22;
