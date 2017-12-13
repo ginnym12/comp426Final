@@ -8,7 +8,7 @@
 }
 
 .box {
-    width: 100px;
+    min-width: 400px;
     height: 100px;
     border: 2px;
     border: 1px solid #000;
@@ -17,7 +17,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 td.box {
-  padding-left: 175px;
+  
   font-size: 30px;
   color: #032760;
 }
@@ -27,6 +27,43 @@ td.box {
 
 .day {
     padding: 5px;
+    font-size: 50px;
+}
+
+.date {
+    font-style: bold;
+    font-size: 50px;
+    padding-left: 15px;
+    padding-top: 15px;
+    
+}
+
+.event {
+    padding-left: 100px;
+    font-size: 40px;
+    font-family: Cantarell;
+    color: #032760;
+}
+
+.location {
+    padding-left: 100px;
+    font-size: 40px;
+    font-family: Cantarell;
+    color: #032760;
+}
+
+.time {
+    padding-left: 100px;
+    font-size: 40px;
+    font-family: Cantarell;
+    color: #032760;
+}
+
+.usrname {
+    padding-left: 100px;
+    font-size: 40px;
+    font-family: Cantarell;
+    color: #032760;
 }
 
 table {
@@ -116,9 +153,10 @@ body {
     flex-direction: column;
 }
 
-.titleText {
+/* .titleText {
     font-family: Arial, Helvetica, sans-serif;
-}
+    font-size: 100px;
+} */
 
 
 /* The Modal (background) */
@@ -195,7 +233,11 @@ body {
 }
 
 #month {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
-
+    font-family: Lucida Console;
+    font-size: 70px;
+    margin: auto;
+    display:flex;
+    justify-content: center;
+    padding: 40px;
+    color: #032760;
 }

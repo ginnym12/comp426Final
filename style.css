@@ -162,23 +162,6 @@ body {
     color: #032760;
 }
 
-.box {
-    width: 100px;
-    height: 100px;
-    border: 2px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    color: #032760;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-td.box {
-    padding-left: 175px;
-    font-size: 30px;
-    color: #032760;
-}
-
-
 /* .daybox {
 } */
 

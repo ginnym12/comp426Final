@@ -116,7 +116,7 @@ var WeekCalendar = function (schedule) {
     var firstDayIndex = firstDay.getDay();
     var lastDayIndex = firstDay.getDay() + lastDay.getDate();
     for (var i = firstDayIndex; i < lastDayIndex; i++) {
-        $('<div class="date">' + (j++) + '</div>').appendTo("#daynumber" + i);
+        $('<div class="date">' + (j++) + '</div><br>').appendTo("#daynumber" + i);
     }
 
     for (var i = 0; i < schedule.length; i++) {
@@ -129,7 +129,7 @@ var WeekCalendar = function (schedule) {
             }
             console.log(schedule[i]);
             $('<div class="event">' + schedule[i]["Event"] + '</div>').appendTo("#daynumber" + dayOfMonth);
-            $('<div class="location">' + schedule[i]["Location"] + '</div><br>').appendTo("#daynumber" + dayOfMonth);
+            $('<div class="location">' + schedule[i]["Location"] + '</div>').appendTo("#daynumber" + dayOfMonth);
             $('<div class="time">' + schedule[i]["Time"] + '</div><br>').appendTo("#daynumber" + dayOfMonth);
         }
     }
